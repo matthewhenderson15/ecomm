@@ -31,6 +31,8 @@ class UsersRepository {
 
         // Write back to the JSON file
         await this.writeAll(records);
+
+        return attrs;
     }
 
     async writeAll(records) {
