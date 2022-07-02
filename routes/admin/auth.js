@@ -18,6 +18,7 @@ router.get('/signup', (req, res) => {
     res.send(signupTemplate({ req }));
 });
 
+// todo - fix redirect
 router.post(
     '/signup', 
     [requireEmail, requirePassword, requirePasswordConfirmation],
@@ -28,7 +29,7 @@ router.post(
 
         req.session.userId = user.id;
 
-        res.send('Account created!');
+        res.redirect('/admin/products');
 });
 
 router.get('/signout', (req, res) => {
@@ -51,7 +52,7 @@ router.post(
 
         req.session.userId = user.id;
 
-        res.send('You are signed in!!!');
+        res.redirect('/admin/products');
 });
 
 module.exports = router;
