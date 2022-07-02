@@ -18,7 +18,6 @@ router.get('/signup', (req, res) => {
     res.send(signupTemplate({ req }));
 });
 
-// todo - fix redirect
 router.post(
     '/signup', 
     [requireEmail, requirePassword, requirePasswordConfirmation],
